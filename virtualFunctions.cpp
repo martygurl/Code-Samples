@@ -52,7 +52,8 @@
 #include <algorithm>
 using namespace std;
 
-class Person {
+class Person 
+{
 protected:
     string name;
     int age;
@@ -71,7 +72,8 @@ public:
     }
 };
 
-class Professor : public Person {
+class Professor : public Person 
+{
     int publications;
     static int id;
 public:
@@ -91,14 +93,17 @@ public:
 // must initialize static varible like this
 int Professor::id = 0;
 
-class Student : public Person {
+class Student : public Person 
+{
     #define TOTAL_MARKS 6
     int marks[TOTAL_MARKS];
     int cur_id;
     static int id;
 public:
-    Student(): cur_id(0) {
-        for (int i = 0; i < TOTAL_MARKS; i++){
+    Student(): cur_id(0) 
+    {
+        for (int i = 0; i < TOTAL_MARKS; i++)
+        {
             marks[i] = 0;
         }
         cur_id = ++id;
@@ -123,16 +128,19 @@ public:
 };
 int Student::id = 0;
 
-int main(){
+int main()
+{
 
     int n, val;
     cin>>n; //The number of objects that is going to be created.
     Person *per[n];
 
-    for(int i = 0;i < n;i++){
+    for(int i = 0;i < n;i++)
+    {
 
         cin>>val;
-        if(val == 1){
+        if(val == 1)
+        {
             // If val is 1 current object is of type Professor
             per[i] = new Professor;
 

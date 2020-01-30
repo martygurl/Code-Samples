@@ -34,7 +34,7 @@
  * No 5
  * Yes 6
  * Yes 8
- * *********************************************************************************************************************************************************************/
+ * ******************************************************************************************************************************************************************/
 
 #include <cmath>
 #include <cstdio>
@@ -57,13 +57,18 @@ int main()
 
    int queries, find;
    cin >> queries;
-   for (int i = 0; i < queries; i++){
+   for (int i = 0; i < queries; i++)
+   {
        cin >> find;
        vector<int>::iterator low = lower_bound(numbers.begin(), numbers.end(), find);
        if (numbers[low - numbers.begin()] == find)
+       {
            cout << "Yes " << (low - numbers.begin()+1) << endl;
+       }
        else
+       {
            cout << "No " << (low - numbers.begin()+1) << endl;
+       }
    }
    return 0;
 }
